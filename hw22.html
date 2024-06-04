@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            function validateForm()
+            {
+                var x=document.forms["myForm"]["username"].value;
+                if(x=="")
+                {
+                    alert("Name must be fill out !")
+                    return false;
+                }
+                var y=document.forms["myForm"]["useremail"].value;
+                if(y=="")
+                {
+                    alert("Email must be fill out !")
+                    return false;
+                }
+                <!--store @ and . to the variables-->
+                let.atpos=y.indexOf("@")
+                let.dotpos=y.lastIndexOf(".")
+                if(atpos<1 || (dotpos-atpos)<2)
+                {
+                    alert("Please enter correct email address !")
+                    return false;
+                }
+                var z=document.forms["myForm"]["mobilenumber"].value;
+                if(z=="")
+                {
+                    alert("Phone number must be fill out !")
+                    return false;
+                }
+                if(isNaN(z))
+                {
+                    alert("Invalid mobile number !")
+                    return false;
+                }
+                return true;
+            }
+        </script>
+
+    </head>
+    <body>
+        <form name="myForm" onsubmit="return validateForm()">
+          Name:  <input type="text" name="username"><br><br>
+          Email: <input type="text" name="useremail"><br><br>
+          Mobile Number: <input type="text" name="mobilenumber"><br><br>
+          <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>
