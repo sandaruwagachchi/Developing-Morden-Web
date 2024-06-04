@@ -1,0 +1,33 @@
+<html>
+    <head>
+       <script type="text/javascript">
+          function doValidate()
+          {
+            if(document.myForm.userName.value=="")
+            {
+                alert("Please Provide UserName !!")
+                return false;
+            }
+            if(document.myForm.userEmail.value=="")
+            {
+                alert("Please Provide UserEmail !!")
+                return false;
+            }
+            if(document.myForm.mobileNumber.value=="")
+            {
+                alert("Please Provide MobileNumber !!")
+                return false;
+            }
+            return true;
+          }
+       </script>
+    </head>
+    <body>
+       <form name="myForm" onsubmit="return doValidate()">
+        Name:          <input type="text" name="userName"><br><br>
+        Email:         <input type="text" name="userEmail"><br><br>
+        Mobile Number: <input type="text" name="mobileNumber"><br><br>
+        <input type="submit" value="Submit Query">
+    </form>
+    </body>
+</html>
