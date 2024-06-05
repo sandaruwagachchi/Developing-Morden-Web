@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            function validateForm()
+            {
+               var x=document.forms["myForm"]["password"].value;
+               if(x=="")
+               {
+                alert("Password must be fii out !")
+                return false;
+               }
+               var y=document.forms["myForm"]["repassword"].value;
+               if(y=="")
+               {
+                alert("Please re enter your password !")
+                return false;
+               }
+               if(x!=y)
+               {
+                alert("Please check re enter password !")
+                return false;
+               }
+               
+               return true;
+               
+            }
+
+        </script>
+    </head>
+    <body>
+       <form name="myForm" onsubmit="return validateForm()">
+        Password: <input type="password" name="password"><br><br>
+        Retype_Password: <input type="password" name="repassword"><br><br>
+        <input type="submit" value="Submit">
+
+       </form>
+    </body>
+</html>
