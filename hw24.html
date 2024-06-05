@@ -1,0 +1,108 @@
+<html>
+    <head>
+       <script type="text/javascript">
+        function validateForm()
+        {
+            var p=document.forms["myForm"]["name"].value;
+            if(p=="")
+            {
+                alert("Name must be fill out !!")
+                return false;
+            }
+            var q=document.forms["myForm"]["email"].value;
+            if(q=="")
+            {
+                alert("Email must be fill out !!")
+                return false;
+            }
+            let atpos=q.indexOf("@")
+            let dotpos=q.lastIndexOf(".")
+            if(atpos<1 || (dotpos-atpos)<2)
+            {
+                alert("Invalid email address !!")
+                return false;
+            }
+            var r=document.forms["myForm"]["password"].value;
+            if(r=="")
+            {
+                alert("Password must be fill out !!")
+                return false;
+            }
+            var s=document.forms["myForm"]["rePassword"].value;
+            if(s=="")
+            {
+                alert("Re enter your password !!")
+                return false;
+            }
+            if(r != s)
+            {
+                alert("Password are not match !!")
+                return false;
+            }
+            var t=document.forms["myForm"]["contactNumber"].value;
+            if(t=="")
+            {
+                alert("Contact Number must be fill out !!")
+                return false;
+            }
+            if(isNaN(t))
+            {
+                alert("Invalid contact number !!")
+                return false;
+            }
+            var u=document.forms["myForm"]["address"].value;
+            if(u=="")
+            {
+                alert("Address must be fill out !!")
+                return false;
+            }
+            var v=document.forms["myForm"]["courseName"].value;
+            if(v=="")
+            {
+                alert("Course Name must be fill out !!")
+                return false;
+            }
+            return true;
+        }
+       </script>
+
+    </head>
+    <body>
+                <form name="myForm" onsubmit="return validateForm()">
+                    <table border="1">
+                        <tr>
+                            <td>Name</td>
+                            <td colspan="2">  <input type="text" name="name">   </td>
+                        </tr>
+                        <tr>
+                            <td>email </td>
+                            <td colspan="2"> <input type="text" name="email">   </td>
+                        </tr>
+                        <tr>
+                            <td>Password </td>
+                            <td colspan="2"><input type="text" name="password"></td>
+                        </tr>
+                        <tr>
+                            <td>Verify password </td>
+                            <td colspan="2"> <input type="text" name="rePassword">   </td>
+                        </tr>
+                        <tr>
+                            <td>Contact Number </td>
+                            <td colspan="2">  <input type="text" name="contactNumber">  </td>
+                        </tr>
+                        <tr>
+                            <td>Address </td>
+                            <td colspan="2"> <input type="text" name="address">   </td>
+                        </tr>
+                        <tr>
+                            <td>Course Name </td>
+                            <td colspan="2"><input type="text" name="courseName">   </td>
+                        </tr>
+                        <tr>
+                            <td>     </td>
+                            <td colspan="2"><input type="submit" value="Submit"></td>
+                        </tr>
+                    </table>
+                </form>
+    </body>
+</html>
